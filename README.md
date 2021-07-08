@@ -13,3 +13,5 @@ Flutter_image_crop Plugin will be created soon.
 + Image transform (scale & translate)
 
 + Crop image
+
++ Crop box mask
