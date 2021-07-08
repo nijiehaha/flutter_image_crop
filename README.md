@@ -2,8 +2,6 @@
 
 A simple and easy way to crop image on flutter.
 
-I will make it become plugin soon.
+flutter_image_crop Plugin will be created soon.
 
-before that, if this demo is helpful to you, 
-
-Please comes leave your stars ❤️
+Hopefully, your star is warmly welcome if this demo is beneficial to you ❤️.
