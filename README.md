@@ -1,5 +1,7 @@
 # flutter_image_crop
 
+A Chinese version of this document can be found [here](https://github.com/nijiehaha/flutter_image_crop/blob/main/README_CN.md)
+
 ## A simple demo to crop image on flutter easily. ##
 
 Flutter_image_crop Plugin will be created soon.
