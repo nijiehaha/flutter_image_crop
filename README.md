@@ -1,6 +1,6 @@
 # flutter_image_crop
 
-## A simple and easy flutter demo to crop image. ##
+## A simple demo to crop image on flutter easily. ##
 
 Flutter_image_crop Plugin will be created soon.
 
