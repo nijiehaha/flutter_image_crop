@@ -7,3 +7,9 @@ A Chinese version of this document can be found [here](https://github.com/nijieh
 Flutter_image_crop Plugin will be created soon.
 
 **Hopefully, your star is warmly welcome if this demo is beneficial to you ❤️.**
+
+## Features
+
++ Image transform (scale & translate)
+
++ Crop image
