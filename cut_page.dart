@@ -18,11 +18,41 @@ class _CutPageState extends State<CutPage> {
   double _scale = 1.0;
 
   Offset _offset = Offset(0, 0);
+  
+  Offset _originOffset = Offset(0, 0);
 
   Offset _lastFocalPoint = Offset(0.0, 0.0);
 
   final _surfaceKey = GlobalKey();
   final _cropKey = GlobalKey();
+  
+  @override
+  void initState() {
+    super.initState();
+
+    _load();
+  }
+
+  _load() async {
+    final image = await _loadImage();
+    setState(() {
+      _originOffset = Offset(image.width / 2, image.height / 2);
+    });
+  }
+
+  Future<ui.Image> _loadImage() async {
+    final provider = AssetImage("images/lufei.jpeg");
+    Completer<ui.Image> completer = Completer<ui.Image>();
+    ImageStreamListener listener;
+    ImageStream stream = provider.resolve(ImageConfiguration.empty);
+    listener = ImageStreamListener((ImageInfo frame, bool sync) {
+      final ui.Image image = frame.image;
+      completer.complete(image);
+      stream.removeListener(listener);
+    });
+    stream.addListener(listener);
+    return completer.future;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +87,7 @@ class _CutPageState extends State<CutPage> {
             children: [
               Center(
                 child: Transform(
-                  origin: Offset(224 / 2.0, 346 / 2.0),
+                  origin: _originOffset,
                   transform: Matrix4.identity()
                     ..scale(_scale, _scale)
                     ..translate(_offset.dx, _offset.dy),
